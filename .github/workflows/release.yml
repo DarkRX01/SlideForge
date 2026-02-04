@@ -35,8 +35,23 @@ jobs:
       - name: Ensure Electron for electron-builder
         run: npm install electron@28.3.3 --save-dev --workspace=@slideforge/electron
 
+      - name: Ensure 7zip binary for electron-builder
+        shell: pwsh
+        run: |
+          $dir = "node_modules/7zip-bin/win/x64"
+          New-Item -ItemType Directory -Force -Path $dir | Out-Null
+          $sys7za = "C:\Program Files\7-Zip\7za.exe"
+          if (Test-Path $sys7za) {
+            Copy-Item $sys7za -Destination (Join-Path $dir "7za.exe") -Force
+            Write-Host "Using system 7za.exe"
+          } else {
+            npm install 7zip-bin@5.2.0 --save-dev
+          }
+
       - name: Build Windows (installer + portable)
         run: npm run build:win
+        env:
+          NODE_OPTIONS: --max_old_space_size=4096
 
       - name: Upload Windows installer
         uses: actions/upload-artifact@v4
