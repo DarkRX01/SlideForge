@@ -111,3 +111,113 @@ export interface ApiResponse<T> {
   data?: T;
   error?: string;
 }
+
+// Voice-related types
+export interface VoiceCommandRequest {
+  audio: Blob | Buffer;
+  language?: string;
+}
+
+export interface VoiceCommandResponse {
+  transcript: string;
+  action: VoiceCommandAction;
+  confidence: number;
+}
+
+export interface VoiceCommandAction {
+  type: string;
+  params?: Record<string, any>;
+}
+
+export interface TTSRequest {
+  text: string;
+  language?: string;
+  voice?: string;
+  speed?: number;
+}
+
+export interface TTSResponse {
+  audioUrl: string;
+  duration: number;
+}
+
+export interface VoiceOverRequest {
+  slideId: string;
+  text: string;
+  voice?: string;
+}
+
+export interface VoiceOverResponse {
+  audioUrl: string;
+  duration: number;
+}
+
+export interface AvailableVoice {
+  id: string;
+  name: string;
+  language: string;
+  gender?: 'male' | 'female';
+}
+
+export interface VoiceSettings {
+  enabled: boolean;
+  language: string;
+  voice: string;
+  speed: number;
+}
+
+export interface SlideVoiceOver {
+  slideId: string;
+  audioUrl: string;
+  duration: number;
+}
+
+// Cache types
+export interface CacheEntry {
+  key: string;
+  value: any;
+  expiresAt: number;
+}
+
+// Export types
+export interface ExportConfig {
+  format: 'pdf' | 'pptx' | 'html' | 'video';
+  quality: 'low' | 'medium' | 'high';
+  includeAnimations?: boolean;
+}
+
+export interface ExportJob {
+  id: string;
+  presentationId: string;
+  format: string;
+  status: 'pending' | 'processing' | 'completed' | 'failed';
+  progress: number;
+  outputPath?: string;
+  error?: string;
+}
+
+// Animation types
+export interface AnimationTimeline {
+  id: string;
+  slideId: string;
+  animations: Animation[];
+}
+
+export interface AnimationPreset {
+  id: string;
+  name: string;
+  type: string;
+  preview: string;
+  config: Partial<Animation>;
+}
+
+export type EasingType = 'linear' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'power2.in' | 'power2.out' | 'power2.inOut';
+
+export type AnimationType = 'fade' | 'slide' | 'zoom' | 'rotate' | 'morph' | '3d' | 'particle' | 'custom';
+
+export interface ParticleConfig {
+  count: number;
+  size: number;
+  color: string;
+  speed: number;
+}

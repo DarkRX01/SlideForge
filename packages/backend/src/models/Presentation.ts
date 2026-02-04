@@ -1,5 +1,5 @@
 import { db } from '../utils/database';
-import type { Presentation } from '@slides-clone/shared';
+import type { Presentation } from '@slideforge/shared';
 
 export class PresentationModel {
   static getAll(): Presentation[] {

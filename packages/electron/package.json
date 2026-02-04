@@ -19,14 +19,14 @@
   },
   "dependencies": {
     "@slideforge/shared": "*",
-    "electron-updater": "^6.1.7",
-    "electron-store": "^8.1.0"
+    "electron-store": "^8.1.0",
+    "electron-updater": "^6.1.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.5",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
-    "electron": "^28.2.0",
+    "electron": "^28.3.3",
     "electron-builder": "^24.9.1",
     "eslint": "^8.56.0",
     "rimraf": "^5.0.5",
@@ -36,6 +36,7 @@
   "build": {
     "appId": "com.slideforge.app",
     "productName": "SlideForge",
+    "electronVersion": "28.3.3",
     "directories": {
       "output": "build",
       "buildResources": "resources"
@@ -48,26 +49,38 @@
       {
         "from": "../frontend/dist",
         "to": "app",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       },
       {
         "from": "../backend/dist",
         "to": "backend",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       },
       {
         "from": "../../data",
         "to": "data",
-        "filter": ["**/*"]
+        "filter": [
+          "**/*"
+        ]
       }
     ],
     "win": {
-      "target": ["nsis", "portable"],
+      "target": [
+        "nsis",
+        "portable"
+      ],
       "icon": "resources/icon.ico",
       "publisherName": "SlideForge"
     },
     "mac": {
-      "target": ["dmg", "zip"],
+      "target": [
+        "dmg",
+        "zip"
+      ],
       "icon": "resources/icon.icns",
       "category": "public.app-category.productivity",
       "hardenedRuntime": true,
@@ -76,7 +89,11 @@
       "entitlementsInherit": "resources/entitlements.mac.plist"
     },
     "linux": {
-      "target": ["AppImage", "deb", "rpm"],
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
       "icon": "resources/icon.png",
       "category": "Office"
     },

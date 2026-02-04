@@ -1,5 +1,5 @@
 import { db } from '../utils/database';
-import type { Slide } from '@slides-clone/shared';
+import type { Slide } from '@slideforge/shared';
 
 export class SlideModel {
   static getById(id: string): Slide | null {

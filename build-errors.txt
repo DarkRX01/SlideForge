@@ -1,0 +1,192 @@
+
+> slideforge@1.0.0 build
+> npm run build --workspaces --if-present
+
+
+> @slideforge/backend@1.0.0 build
+> tsc
+
+src/models/Presentation.ts(2,35): error TS2307: Cannot find module '@slides-clone/shared' or its corresponding type declarations.
+src/models/Slide.ts(2,28): error TS2307: Cannot find module '@slides-clone/shared' or its corresponding type declarations.
+src/routes/voice.ts(7,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceCommandRequest'.
+src/routes/voice.ts(8,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'TTSRequest'.
+src/routes/voice.ts(9,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceOverRequest'.
+src/services/cacheService.ts(2,15): error TS2305: Module '"@slideforge/shared"' has no exported member 'CacheEntry'.
+src/services/exportService.ts(4,29): error TS2305: Module '"@slideforge/shared"' has no exported member 'ExportConfig'.
+src/services/exportService.ts(4,43): error TS2305: Module '"@slideforge/shared"' has no exported member 'ExportJob'.
+src/services/exportService.ts(78,28): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ low: number; medium: number; high: number; }'.
+src/services/exportService.ts(118,36): error TS2345: Argument of type 'ArrayBuffer' is not assignable to parameter of type 'string | Stream | ArrayBufferView<ArrayBufferLike> | Iterable<string | ArrayBufferView<ArrayBufferLike>> | AsyncIterable<...>'.
+  Type 'ArrayBuffer' is not assignable to type 'Stream | DataView<ArrayBufferLike> | Iterable<string | ArrayBufferView<ArrayBufferLike>> | AsyncIterable<...>'.
+    Type 'ArrayBuffer' is missing the following properties from type 'DataView<ArrayBufferLike>': buffer, byteOffset, getFloat32, getFloat64, and 18 more.
+src/services/exportService.ts(168,35): error TS2339: Property 'description' does not exist on type 'Presentation'.
+src/services/exportService.ts(181,62): error TS2339: Property 'color' does not exist on type 'Background'.
+src/services/exportService.ts(183,61): error TS2339: Property 'image' does not exist on type 'Background'.
+src/services/exportService.ts(194,41): error TS2339: Property 'content' does not exist on type 'SlideElement'.
+src/services/exportService.ts(201,33): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(202,30): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(203,33): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(204,30): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(205,29): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(208,42): error TS2339: Property 'content' does not exist on type 'SlideElement'.
+src/services/exportService.ts(222,38): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(223,29): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(224,32): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(225,32): error TS2339: Property 'style' does not exist on type 'SlideElement'.
+src/services/exportService.ts(351,61): error TS2552: Cannot find name 'jobId'. Did you mean 'job'?
+src/services/exportService.ts(533,49): error TS2339: Property 'fonts' does not exist on type 'Theme'.
+src/services/exportService.ts(631,44): error TS2304: Cannot find name 'HTMLElement'.
+src/services/exportService.ts(632,16): error TS2584: Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
+src/services/exportService.ts(635,17): error TS2584: Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
+src/services/exportService.ts(639,5): error TS2584: Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
+src/services/exportService.ts(643,38): error TS2304: Cannot find name 'HTMLElement'.
+src/services/imageService.ts(197,29): error TS2584: Cannot find name 'document'. Do you need to change your target library? Try changing the 'lib' compiler option to include 'dom'.
+src/services/voiceService.ts(7,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceCommandRequest'.
+src/services/voiceService.ts(8,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceCommandResponse'.
+src/services/voiceService.ts(9,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'TTSRequest'.
+src/services/voiceService.ts(10,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'TTSResponse'.
+src/services/voiceService.ts(11,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceOverRequest'.
+src/services/voiceService.ts(12,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceOverResponse'.
+src/services/voiceService.ts(13,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'AvailableVoice'.
+src/services/voiceService.ts(14,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceCommandAction'.
+src/services/voiceService.ts(15,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'SlideVoiceOver'.
+
+> @slideforge/electron@1.0.0 build
+> tsc && npm run build:electron
+
+
+> @slideforge/electron@1.0.0 build:electron
+> electron-builder
+
+  • electron-builder  version=24.13.3 os=10.0.22621
+  • loaded configuration  file=package.json ("build" field)
+  ⨯ Cannot compute electron version from installed node modules - none of the possible electron modules are installed and version ("^28.2.0") is not fixed in project.
+See https://github.com/electron-userland/electron-builder/issues/3984#issuecomment-504968246
+
+> @slideforge/frontend@1.0.0 build
+> tsc && vite build
+
+src/components/ai/index.ts(2,31): error TS2307: Cannot find module './SlideEnhancer' or its corresponding type declarations.
+src/components/editor/Animation3DScene.tsx(13,3): error TS6133: 'elementContent' is declared but its value is never read.
+src/components/editor/Animation3DScene.tsx(68,40): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/Animation3DScene.tsx(69,37): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/Animation3DScene.tsx(70,37): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/Animation3DScene.tsx(71,37): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/Animation3DScene.tsx(72,33): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/AnimationControls.tsx(174,101): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/AnimationControls.tsx(180,101): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/components/editor/AnimationPresetBrowser.tsx(2,10): error TS2305: Module '"@slideforge/shared"' has no exported member 'AnimationPreset'.
+src/components/editor/AnimationPreview.tsx(132,60): error TS2339: Property 'trigger' does not exist on type 'Animation'.
+src/components/editor/AnimationPreview.tsx(134,24): error TS2339: Property 'repeat' does not exist on type 'Animation'.
+src/components/editor/AnimationPreview.tsx(137,62): error TS2339: Property 'repeat' does not exist on type 'Animation'.
+src/components/editor/AnimationPreview.tsx(150,21): error TS6133: 'slideId' is declared but its value is never read.
+src/components/editor/EditorToolbar.tsx(24,31): error TS6133: 'clipboard' is declared but its value is never read.
+src/components/editor/KeyframeEditor.tsx(2,20): error TS2305: Module '"@slideforge/shared"' has no exported member 'EasingType'.
+src/components/editor/KeyframeEditor.tsx(60,7): error TS2353: Object literal may only specify known properties, and 'easing' does not exist in type 'Keyframe'.
+src/components/editor/KeyframeEditor.tsx(92,43): error TS2353: Object literal may only specify known properties, and 'easing' does not exist in type 'Keyframe'.
+src/components/editor/KeyframeEditor.tsx(207,18): error TS2322: Type '{ children: Element[]; value: any; onChange: (e: any) => void; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'children' does not exist on type 'IntrinsicAttributes & SelectProps'.
+src/components/editor/KeyframeEditor.tsx(208,35): error TS2339: Property 'easing' does not exist on type 'Keyframe'.
+src/components/editor/KeyframeEditor.tsx(209,30): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/editor/SlideCanvas.tsx(163,24): error TS2554: Expected 0 arguments, but got 1.
+src/components/editor/TimelineEditor.tsx(16,3): error TS6133: 'slideId' is declared but its value is never read.
+src/components/editor/TimelineEditor.tsx(37,9): error TS6133: 'SCALE' is declared but its value is never read.
+src/components/export/ExportDialog.tsx(110,13): error TS2322: Type '{ value: ExportFormat; onChange: (value: any) => void; options: { value: string; label: string; }[]; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'onChange' does not exist on type 'IntrinsicAttributes & SelectProps'.
+src/components/export/ExportDialog.tsx(110,24): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/export/ExportDialog.tsx(119,13): error TS2322: Type '{ value: ExportQuality; onChange: (value: any) => void; options: { value: string; label: string; }[]; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'onChange' does not exist on type 'IntrinsicAttributes & SelectProps'.
+src/components/export/ExportDialog.tsx(119,24): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/components/export/ExportProgress.tsx(5,10): error TS2724: '"@/services/websocket"' has no exported member named 'useWebSocket'. Did you mean 'websocket'?
+src/components/presentation/PresentationMode.tsx(4,1): error TS6133: 'Slide' is declared but its value is never read.
+src/components/voice/VoiceCommand.tsx(21,32): error TS2339: Property 'navigateToSlide' does not exist on type 'PresentationState'.
+src/components/voice/VoiceCommand.tsx(21,49): error TS2339: Property 'createSlide' does not exist on type 'PresentationState'.
+src/components/voice/VoiceCommand.tsx(22,11): error TS2339: Property 'setTheme' does not exist on type 'EditorState'.
+src/components/voice/VoiceCommand.tsx(25,10): error TS6133: 'audioChunks' is declared but its value is never read.
+src/components/voice/VoiceCommand.tsx(128,13): error TS2554: Expected 2 arguments, but got 1.
+src/components/voice/VoiceOverPanel.tsx(4,15): error TS2305: Module '"@slideforge/shared"' has no exported member 'SlideVoiceOver'.
+src/components/voice/VoiceSettings.tsx(3,1): error TS6133: 'Button' is declared but its value is never read.
+src/components/voice/VoiceSettings.tsx(45,12): error TS2322: Type '{ children: Element[]; value: any; onChange: (e: any) => void; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'children' does not exist on type 'IntrinsicAttributes & SelectProps'.
+src/components/voice/VoiceSettings.tsx(47,24): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/components/voice/VoiceSettings.tsx(68,12): error TS2322: Type '{ children: Element[]; value: any; onChange: (e: any) => void; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'children' does not exist on type 'IntrinsicAttributes & SelectProps'.
+src/components/voice/VoiceSettings.tsx(70,24): error TS7006: Parameter 'e' implicitly has an 'any' type.
+src/hooks/useKeyboardShortcuts.ts(7,61): error TS6133: 'deleteSlide' is declared but its value is never read.
+src/hooks/useKeyboardShortcuts.ts(8,23): error TS2339: Property 'canUndo' does not exist on type 'EditorState'.
+src/hooks/useKeyboardShortcuts.ts(8,32): error TS2339: Property 'canRedo' does not exist on type 'EditorState'.
+src/hooks/useKeyboardShortcuts.ts(8,41): error TS2339: Property 'selectedElements' does not exist on type 'EditorState'.
+src/hooks/useKeyboardShortcuts.ts(8,59): error TS2339: Property 'deleteElements' does not exist on type 'EditorState'.
+src/hooks/useKeyboardShortcuts.ts(8,89): error TS2339: Property 'pasteElements' does not exist on type 'EditorState'.
+src/hooks/useKeyboardShortcuts.ts(28,9): error TS2554: Expected 1 arguments, but got 0.
+src/hooks/useWorker.ts(3,28): error TS6133: 'T' is declared but its value is never read.
+src/lib/animationPresets.ts(1,10): error TS2305: Module '"@slideforge/shared"' has no exported member 'AnimationPreset'.
+src/services/__tests__/animationEngine.test.ts(1,44): error TS6133: 'vi' is declared but its value is never read.
+src/services/__tests__/animationEngine.test.ts(20,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/__tests__/animationEngine.test.ts(38,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/__tests__/animationEngine.test.ts(58,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/__tests__/animationEngine.test.ts(79,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/__tests__/animationEngine.test.ts(100,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/__tests__/animationEngine.test.ts(122,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/__tests__/animationEngine.test.ts(133,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/services/animationEngine.ts(2,21): error TS2724: '"@slideforge/shared"' has no exported member named 'AnimationType'. Did you mean 'Animation'?
+src/services/animationEngine.ts(2,21): error TS6133: 'AnimationType' is declared but its value is never read.
+src/services/animationEngine.ts(2,36): error TS2305: Module '"@slideforge/shared"' has no exported member 'EasingType'.
+src/services/animationEngine.ts(2,48): error TS6133: 'Keyframe' is declared but its value is never read.
+src/services/animationEngine.ts(2,58): error TS2305: Module '"@slideforge/shared"' has no exported member 'ParticleConfig'.
+src/services/animationEngine.ts(10,11): error TS6133: 'threeScene' is declared but its value is never read.
+src/services/animationEngine.ts(48,14): error TS2678: Type '"custom"' is not comparable to type '"rotate" | "fade" | "slide" | "zoom" | "morph" | "3d" | "particle"'.
+src/services/animationEngine.ts(60,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(80,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(116,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(137,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(154,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(185,30): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(207,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(232,38): error TS2339: Property 'properties' does not exist on type 'Animation'.
+src/services/animationEngine.ts(272,43): error TS2339: Property 'easing' does not exist on type 'Keyframe'.
+src/services/animationEngine.ts(288,22): error TS2345: Argument of type '() => Promise<void>' is not assignable to parameter of type 'TimelineChild'.
+  Type '() => Promise<void>' is not assignable to type 'Callback'.
+    Type 'Promise<void>' is not assignable to type 'void'.
+src/store/__tests__/animationStore.test.ts(24,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(43,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(62,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(83,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(102,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(125,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(172,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(182,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(212,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(222,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(243,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(257,24): error TS2339: Property 'chain' does not exist on type 'Animation'.
+src/store/__tests__/animationStore.test.ts(266,9): error TS2322: Type '"custom"' is not assignable to type '"rotate" | "fade" | "slide" | "zoom" | "morph" | "3d" | "particle"'.
+src/store/__tests__/animationStore.test.ts(279,9): error TS2353: Object literal may only specify known properties, and 'easing' does not exist in type 'Keyframe'.
+src/store/__tests__/animationStore.test.ts(290,9): error TS2322: Type '"custom"' is not assignable to type '"rotate" | "fade" | "slide" | "zoom" | "morph" | "3d" | "particle"'.
+src/store/__tests__/animationStore.test.ts(296,58): error TS2353: Object literal may only specify known properties, and 'easing' does not exist in type 'Keyframe'.
+src/store/__tests__/animationStore.test.ts(310,9): error TS2322: Type '"custom"' is not assignable to type '"rotate" | "fade" | "slide" | "zoom" | "morph" | "3d" | "particle"'.
+src/store/__tests__/animationStore.test.ts(317,47): error TS2353: Object literal may only specify known properties, and 'easing' does not exist in type 'Keyframe'.
+src/store/__tests__/animationStore.test.ts(318,48): error TS2353: Object literal may only specify known properties, and 'easing' does not exist in type 'Keyframe'.
+src/store/__tests__/animationStore.test.ts(335,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(345,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(366,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(377,11): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(400,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(419,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/__tests__/animationStore.test.ts(441,9): error TS2353: Object literal may only specify known properties, and 'slideId' does not exist in type 'Animation'.
+src/store/animationStore.ts(2,21): error TS2305: Module '"@slideforge/shared"' has no exported member 'AnimationTimeline'.
+src/store/animationStore.ts(2,40): error TS2305: Module '"@slideforge/shared"' has no exported member 'AnimationPreset'.
+src/store/animationStore.ts(196,13): error TS6133: 'animations' is declared but its value is never read.
+src/store/animationStore.ts(266,45): error TS2339: Property 'slideId' does not exist on type 'Animation'.
+src/store/voiceStore.ts(3,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceCommandResponse'.
+src/store/voiceStore.ts(4,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceCommandAction'.
+src/store/voiceStore.ts(5,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'TTSResponse'.
+src/store/voiceStore.ts(6,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceOverResponse'.
+src/store/voiceStore.ts(7,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'AvailableVoice'.
+src/store/voiceStore.ts(8,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'VoiceSettings'.
+src/store/voiceStore.ts(9,3): error TS2305: Module '"@slideforge/shared"' has no exported member 'SlideVoiceOver'.
+src/utils/indexedDBCache.ts(129,11): error TS6133: 'now' is declared but its value is never read.
+src/workers/export.worker.ts(114,27): error TS6133: 'payload' is declared but its value is never read.
+
+> @slideforge/shared@1.0.0 build
+> tsc
+
