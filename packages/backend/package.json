@@ -14,6 +14,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "@slideforge/shared": "*",
     "axios": "^1.6.5",
     "better-sqlite3": "^9.3.0",

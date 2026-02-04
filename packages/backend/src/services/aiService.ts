@@ -1,3 +1,4 @@
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import type { 
   SlideElement,
   TextProperties
@@ -63,8 +64,26 @@ export class AIService {
   private static OLLAMA_BASE_URL = process.env.OLLAMA_URL || 'http://localhost:11434';
   private static DEFAULT_MODEL = process.env.OLLAMA_MODEL || 'llama3';
   private static REQUEST_TIMEOUT = 120000;
+  private static AI_PROVIDER = process.env.AI_PROVIDER || 'gemini'; // 'ollama' or 'gemini'
+  private static GEMINI_API_KEY = process.env.GEMINI_API_KEY || '';
+  private static geminiClient: GoogleGenerativeAI | null = null;
+
+  private static getGeminiClient(): GoogleGenerativeAI {
+    if (!this.geminiClient && this.GEMINI_API_KEY) {
+      this.geminiClient = new GoogleGenerativeAI(this.GEMINI_API_KEY);
+    }
+    if (!this.geminiClient) {
+      throw new Error('Gemini API key not configured');
+    }
+    return this.geminiClient;
+  }
 
   static async checkHealth(): Promise<boolean> {
+    if (this.AI_PROVIDER === 'gemini') {
+      return !!this.GEMINI_API_KEY;
+    }
+    
+    // Check Ollama health
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 5000);
@@ -100,17 +119,44 @@ export class AIService {
     model: string = this.DEFAULT_MODEL,
     options?: { temperature?: number; stream?: boolean }
   ): Promise<string> {
-    const cacheKey = `ai:${model}:${prompt}`;
+    const cacheKey = `ai:${this.AI_PROVIDER}:${model}:${prompt}`;
     
     if (!options?.stream) {
       const cached = await CacheService.aiCache(
         cacheKey,
-        async () => this.callOllama(prompt, model, options)
+        async () => this.AI_PROVIDER === 'gemini' 
+          ? this.callGemini(prompt, options)
+          : this.callOllama(prompt, model, options)
       );
       return cached;
     }
     
-    return this.callOllama(prompt, model, options);
+    return this.AI_PROVIDER === 'gemini' 
+      ? this.callGemini(prompt, options)
+      : this.callOllama(prompt, model, options);
+  }
+
+  private static async callGemini(
+    prompt: string,
+    options?: { temperature?: number }
+  ): Promise<string> {
+    try {
+      const genAI = this.getGeminiClient();
+      const model = genAI.getGenerativeModel({ 
+        model: 'gemini-1.5-flash',
+        generationConfig: {
+          temperature: options?.temperature ?? 0.7,
+          maxOutputTokens: 8192,
+        }
+      });
+
+      const result = await model.generateContent(prompt);
+      const response = result.response;
+      return response.text();
+    } catch (error) {
+      console.error('Gemini API error:', error);
+      throw new Error(`Gemini AI failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   }
 
   private static async callOllama(
