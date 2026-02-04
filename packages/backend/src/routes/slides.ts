@@ -60,12 +60,12 @@ const idParamSchema = z.object({
 });
 
 router.get('/presentation/:presentationId', validateParams(z.object({ presentationId: z.string().min(1) })), asyncHandler(async (req, res) => {
-  const slides = SlideModel.findByPresentationId(req.params.presentationId);
+  const slides = SlideModel.getByPresentationId(req.params.presentationId);
   res.json(slides);
 }));
 
 router.get('/:id', validateParams(idParamSchema), asyncHandler(async (req, res) => {
-  const slide = SlideModel.findById(req.params.id);
+  const slide = SlideModel.getById(req.params.id);
 
   if (!slide) {
     throw new AppError(404, 'Slide not found');
@@ -100,7 +100,7 @@ router.delete('/:id', validateParams(idParamSchema), asyncHandler(async (req, re
 }));
 
 router.post('/reorder', validateBody(reorderSlidesSchema), asyncHandler(async (req, res) => {
-  const success = SlideModel.reorder(req.body.presentationId, req.body.slides);
+  const success = SlideModel.updateOrder(req.body.presentationId, req.body.slides);
 
   if (!success) {
     throw new AppError(500, 'Failed to reorder slides');

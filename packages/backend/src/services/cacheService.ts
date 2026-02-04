@@ -1,5 +1,5 @@
 import { CacheModel } from '../models/Cache';
-import type { CacheEntry } from '@presentation-app/shared';
+import type { CacheEntry } from '@slides-clone/shared';
 import crypto from 'crypto';
 
 export class CacheService {
@@ -15,13 +15,13 @@ export class CacheService {
     type: CacheEntry['type'],
     expiresInMs?: number
   ): Promise<T> {
-    const cached = CacheModel.get(key);
+    const cached = CacheModel.get(key, type);
 
     if (cached) {
       try {
-        return JSON.parse(cached.value);
+        return JSON.parse(cached);
       } catch {
-        return cached.value as T;
+        return cached as unknown as T;
       }
     }
 
@@ -52,19 +52,19 @@ export class CacheService {
     return this.getOrSet(key, fetchFn, 'translation', expiresInMs);
   }
 
-  static invalidate(key: string): boolean {
-    return CacheModel.delete(key);
+  static invalidate(key: string, type: CacheEntry['type']): boolean {
+    return CacheModel.delete(key, type);
   }
 
-  static clearExpired(): number {
-    return CacheModel.clearExpired();
+  static clearExpired(): void {
+    CacheModel.cleanExpired();
   }
 
-  static clearByType(type: CacheEntry['type']): number {
-    return CacheModel.clearByType(type);
+  static clearByType(type: CacheEntry['type']): void {
+    CacheModel.clear(type);
   }
 
-  static clearAll(): number {
-    return CacheModel.clearAll();
+  static clearAll(): void {
+    CacheModel.clear();
   }
 }

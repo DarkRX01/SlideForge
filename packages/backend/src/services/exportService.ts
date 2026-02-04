@@ -177,10 +177,10 @@ export class ExportService {
         const slide = pptx.addSlide();
 
         if (slideData.background) {
-          if (slideData.background.type === 'solid') {
-            slide.background = { color: slideData.background.value as string };
+          if (slideData.background.type === 'color') {
+            slide.background = { color: slideData.background.color || slideData.background.value || '#ffffff' };
           } else if (slideData.background.type === 'image') {
-            slide.background = { path: slideData.background.value as string };
+            slide.background = { path: slideData.background.image || slideData.background.value || '' };
           }
         }
 
@@ -191,8 +191,9 @@ export class ExportService {
           const h = (element.size.height / 1080) * 5.625;
 
           if (element.type === 'text') {
-            const textContent = element.content as { text: string };
-            slide.addText(textContent.text || '', {
+            const textContent = element.content as any;
+            const text = textContent?.text || textContent || '';
+            slide.addText(text, {
               x,
               y,
               w,

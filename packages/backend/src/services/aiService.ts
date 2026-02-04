@@ -1,7 +1,7 @@
 import type { 
   SlideElement,
   TextProperties
-} from '@presentation-app/shared';
+} from '@slides-clone/shared';
 import { CacheService } from './cacheService';
 import { PresentationModel } from '../models/Presentation';
 import { SlideModel } from '../models/Slide';
@@ -171,8 +171,25 @@ export class AIService {
       const presentationContent = this.parsePresentationResponse(rawResponse);
       
       const presentation = PresentationModel.create({
+        id: `pres-${Date.now()}`,
         title: presentationContent.title,
-        description: `Generated from: ${request.prompt}`
+        description: `Generated from: ${request.prompt}`,
+        theme: {
+          name: 'Default',
+          colors: {
+            primary: '#3b82f6',
+            secondary: '#8b5cf6',
+            background: '#ffffff',
+            text: '#000000',
+            accent: '#10b981'
+          },
+          fonts: {
+            heading: 'Inter',
+            body: 'Inter',
+            code: 'Fira Code'
+          }
+        },
+        slides: []
       });
 
       const slides = presentationContent.slides.map((slideData, index) => {
@@ -220,15 +237,16 @@ export class AIService {
         ];
 
         const slide = SlideModel.create({
+          id: `slide-${Date.now()}-${index}`,
           presentationId: presentation.id,
           order: index,
+          elements,
+          animations: [],
           background: { type: 'color', color: '#ffffff' },
           notes: slideData.notes
         });
 
-        SlideModel.update(slide.id, { elements });
-
-        return SlideModel.findById(slide.id)!;
+        return SlideModel.getById(slide.id)!;
       });
 
       return {
@@ -249,7 +267,7 @@ export class AIService {
 
   static async enhanceSlide(request: AIEnhancementRequest): Promise<any> {
     try {
-      const slide = SlideModel.findById(request.slideId);
+      const slide = SlideModel.getById(request.slideId);
       if (!slide) {
         throw new Error('Slide not found');
       }

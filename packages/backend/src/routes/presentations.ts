@@ -67,12 +67,12 @@ const idParamSchema = z.object({
 });
 
 router.get('/', asyncHandler(async (_req, res) => {
-  const presentations = PresentationModel.findAll();
+  const presentations = PresentationModel.getAll();
   res.json(presentations);
 }));
 
 router.get('/:id', validateParams(idParamSchema), asyncHandler(async (req, res) => {
-  const presentation = PresentationModel.findById(req.params.id);
+  const presentation = PresentationModel.getById(req.params.id);
 
   if (!presentation) {
     throw new AppError(404, 'Presentation not found');

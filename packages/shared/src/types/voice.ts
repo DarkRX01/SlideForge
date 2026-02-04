@@ -1,5 +1,5 @@
 export interface VoiceCommandRequest {
-  audioData: Buffer | string;
+  audioData: any;  // Buffer in Node.js, string/ArrayBuffer in browser
   language?: string;
   model?: string;
 }
@@ -28,7 +28,7 @@ export interface TTSRequest {
 }
 
 export interface TTSResponse {
-  audioData: Buffer | string;
+  audioData: any;  // Buffer in Node.js, string/ArrayBuffer in browser
   format: 'wav' | 'mp3';
   duration: number;
 }

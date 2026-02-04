@@ -35,7 +35,7 @@ router.post(
   asyncHandler(async (req, res) => {
     const { presentationId, config } = req.body;
     
-    const presentation = PresentationModel.findById(presentationId);
+    const presentation = PresentationModel.getById(presentationId);
     if (!presentation) {
       throw new AppError(404, 'Presentation not found');
     }
@@ -51,7 +51,7 @@ router.post(
   asyncHandler(async (req, res) => {
     const { presentationId, config } = req.body;
     
-    const presentation = PresentationModel.findById(presentationId);
+    const presentation = PresentationModel.getById(presentationId);
     if (!presentation) {
       throw new AppError(404, 'Presentation not found');
     }
@@ -67,7 +67,7 @@ router.post(
   asyncHandler(async (req, res) => {
     const { presentationId, config } = req.body;
     
-    const presentation = PresentationModel.findById(presentationId);
+    const presentation = PresentationModel.getById(presentationId);
     if (!presentation) {
       throw new AppError(404, 'Presentation not found');
     }
@@ -83,7 +83,7 @@ router.post(
   asyncHandler(async (req, res) => {
     const { presentationId, config } = req.body;
     
-    const presentation = PresentationModel.findById(presentationId);
+    const presentation = PresentationModel.getById(presentationId);
     if (!presentation) {
       throw new AppError(404, 'Presentation not found');
     }

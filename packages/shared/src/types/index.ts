@@ -26,8 +26,8 @@ export interface SlideElement {
   position: Position
   size: Size
   rotation: number
-  style: ElementStyle
-  content: unknown
+  style?: ElementStyle
+  content?: unknown
   zIndex: number
 }
 
@@ -64,8 +64,11 @@ export interface Shadow {
 }
 
 export interface Background {
-  type: 'solid' | 'gradient' | 'image'
-  value: string | Gradient
+  type: 'color' | 'gradient' | 'image'
+  value?: string
+  color?: string
+  gradient?: Gradient
+  image?: string
 }
 
 export interface Gradient {
@@ -97,7 +100,7 @@ export type TransitionType =
 export interface Theme {
   name: string
   colors: ThemeColors
-  fonts: ThemeFonts
+  fonts?: ThemeFonts
 }
 
 export interface ThemeColors {
@@ -105,7 +108,7 @@ export interface ThemeColors {
   secondary: string
   background: string
   text: string
-  accent: string
+  accent?: string
 }
 
 export interface ThemeFonts {
@@ -117,30 +120,49 @@ export interface ThemeFonts {
 export interface Animation {
   id: string
   elementId: string
-  type: AnimationType
-  trigger: AnimationTrigger
+  slideId?: string
+  type: 'fade' | 'slide' | 'zoom' | 'rotate' | 'morph' | '3d' | 'particle'
+  trigger?: AnimationTrigger
   duration: number
   delay: number
   easing: string
+  properties?: Record<string, unknown>
   keyframes: Keyframe[]
+  repeat?: number
+  chain?: string
 }
 
-export type AnimationType =
-  | 'fadeIn'
-  | 'fadeOut'
-  | 'slideIn'
-  | 'slideOut'
-  | 'zoomIn'
-  | 'zoomOut'
-  | 'rotate'
-  | 'bounce'
-  | 'custom'
+export type AnimationType = 'fade' | 'slide' | 'zoom' | 'rotate' | 'morph' | '3d' | 'particle'
 
 export type AnimationTrigger = 'onLoad' | 'onClick' | 'onHover' | 'sequence'
 
+export type EasingType = 'linear' | 'ease-in' | 'ease-out' | 'ease-in-out' | 'power2.out' | 'elastic' | 'bounce'
+
 export interface Keyframe {
-  offset: number
+  time: number
+  offset?: number
   properties: Record<string, unknown>
+  easing?: EasingType
+}
+
+export interface AnimationPreset {
+  id: string
+  name: string
+  category: string
+  animation: Partial<Animation>
+}
+
+export interface AnimationTimeline {
+  id: string
+  animations: Animation[]
+  duration: number
+}
+
+export interface ParticleConfig {
+  count: number
+  color: string
+  size: number
+  velocity: number
 }
 
 export interface ExportOptions {
@@ -151,6 +173,28 @@ export interface ExportOptions {
 }
 
 export type ExportFormat = 'pdf' | 'pptx' | 'html' | 'video' | 'images'
+
+export type ExportQuality = 'low' | 'medium' | 'high'
+
+export interface ExportConfig {
+  presentationId: string
+  format: ExportFormat
+  quality: ExportQuality
+  includeNotes?: boolean
+  range?: SlideRange
+}
+
+export interface ExportJob {
+  id: string
+  presentationId: string
+  format: ExportFormat
+  status: 'pending' | 'processing' | 'completed' | 'failed'
+  progress: number
+  filePath?: string
+  error?: string
+  createdAt: string
+  completedAt?: string
+}
 
 export interface SlideRange {
   start: number

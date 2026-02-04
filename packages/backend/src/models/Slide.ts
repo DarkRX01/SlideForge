@@ -125,4 +125,22 @@ export class SlideModel {
 
     return this.create(duplicated);
   }
+
+  static updateOrder(presentationId: string, slides: Array<{ id: string; order: number }>): boolean {
+    try {
+      for (const slide of slides) {
+        db.prepare('UPDATE slides SET order_index = ? WHERE id = ? AND presentation_id = ?')
+          .run(slide.order, slide.id, presentationId);
+      }
+      
+      db.prepare('UPDATE presentations SET updated_at = ? WHERE id = ?').run(
+        new Date().toISOString(),
+        presentationId
+      );
+      
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
 }
