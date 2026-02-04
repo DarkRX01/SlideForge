@@ -73,7 +73,6 @@
         "nsis",
         "portable"
       ],
-      "icon": "resources/icon.ico",
       "publisherName": "SlideForge"
     },
     "mac": {
@@ -106,10 +105,6 @@
       "createStartMenuShortcut": true,
       "shortcutName": "SlideForge",
       "runAfterFinish": true,
-      "installerIcon": "resources/installer.ico",
-      "uninstallerIcon": "resources/uninstaller.ico",
-      "installerHeader": "resources/installer-header.bmp",
-      "installerSidebar": "resources/installer-sidebar.bmp",
       "deleteAppDataOnUninstall": false
     },
     "portable": {

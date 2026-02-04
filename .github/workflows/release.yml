@@ -32,6 +32,9 @@ jobs:
         env:
           npm_config_msvs_version: 2022
 
+      - name: Ensure Electron for electron-builder
+        run: npm install electron@28.3.3 --save-dev --workspace=@slideforge/electron
+
       - name: Build Windows (installer + portable)
         run: npm run build:win
 
