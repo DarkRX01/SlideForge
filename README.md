@@ -5,7 +5,7 @@
 [![GitHub downloads](https://img.shields.io/github/downloads/DarkRX01/SlideForge/total)](https://github.com/DarkRX01/SlideForge/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Just want to use it?** Grab the [**🪟 Windows installer**](https://github.com/DarkRX01/SlideForge/releases) and you're good to go in 3 clicks!
+> **Just want to use it?** [**Download**](https://github.com/DarkRX01/SlideForge/releases) the Windows installer (.exe) or Mac (.dmg) and you're good to go.
 
 **What's this?** Think PowerPoint meets AI magic, but everything runs on *your* computer. No cloud BS, no subscriptions, no tracking. Just you, your ideas, and some seriously cool AI tech working together.
 
@@ -13,10 +13,10 @@
 
 ## 🚀 Get Started (Like, Right Now)
 
-### For Regular Folks (Windows)
-1. [**Download the installer**](https://github.com/DarkRX01/SlideForge/releases) 
-2. Double-click it
-3. That's it. Seriously.
+### For Regular Folks
+1. [**Download**](https://github.com/DarkRX01/SlideForge/releases): **Windows** (Setup or Portable .exe) or **Mac** (.dmg)
+2. Run the installer or app
+3. That's it.
 
 The app opens automatically and you can start making presentations immediately.
 

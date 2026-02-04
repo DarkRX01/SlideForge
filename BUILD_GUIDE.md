@@ -30,6 +30,8 @@ npm run build
 
 ### Build Windows Installer
 
+Build order: shared → backend → frontend → ensure-dist (stubs if needed) → electron.
+
 ```bash
 # Full Windows installer with NSIS (one-click install)
 npm run build:win
@@ -37,6 +39,8 @@ npm run build:win
 # Portable version (no installation)
 npm run build:win:portable
 ```
+
+If backend or frontend fail to build, `scripts/ensure-dist.js` creates minimal dist so electron-builder still produces the exe.
 
 **Output:** `packages/electron/build/`
 - `SlideForge Setup 1.0.0.exe` - Installer (NSIS)
