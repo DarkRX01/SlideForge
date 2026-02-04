@@ -1,8 +1,10 @@
 export interface Presentation {
   id: string;
   title: string;
+  description?: string;
   slides: Slide[];
   theme: Theme;
+  settings?: Record<string, any>;
   createdAt: string;
   updatedAt: string;
 }
@@ -25,6 +27,8 @@ export interface SlideElement {
   rotation: number;
   zIndex: number;
   properties: TextProperties | ImageProperties | ShapeProperties | VideoProperties;
+  content?: any;
+  style?: Record<string, any>;
 }
 
 export interface Position {
@@ -77,32 +81,46 @@ export interface VideoProperties {
 
 export interface Background {
   type: 'color' | 'gradient' | 'image';
-  value: string;
+  value?: string;
+  color?: string;
+  image?: string;
 }
 
 export interface Animation {
   id: string;
   elementId: string;
+  slideId?: string;
   type: 'fade' | 'slide' | 'zoom' | 'rotate' | 'morph' | '3d' | 'particle';
   duration: number;
   delay: number;
   easing: string;
   keyframes?: Keyframe[];
+  properties?: Record<string, any>;
+  chain?: string;
+  trigger?: string;
+  repeat?: number | boolean;
 }
 
 export interface Keyframe {
   time: number;
   properties: Record<string, any>;
+  easing?: string;
 }
 
 export interface Theme {
   name: string;
-  mode: 'light' | 'dark';
+  mode?: 'light' | 'dark';
   colors: {
     primary: string;
     secondary: string;
     background: string;
     text: string;
+    accent?: string;
+  };
+  fonts?: {
+    heading: string;
+    body: string;
+    code?: string;
   };
 }
 
@@ -114,19 +132,25 @@ export interface ApiResponse<T> {
 
 // Voice-related types
 export interface VoiceCommandRequest {
-  audio: Blob | Buffer;
+  audio?: Blob | Buffer;
+  audioData?: string | Blob;
   language?: string;
+  model?: string;
 }
 
 export interface VoiceCommandResponse {
   transcript: string;
   action: VoiceCommandAction;
   confidence: number;
+  language?: string;
+  duration?: number;
 }
 
 export interface VoiceCommandAction {
   type: string;
   params?: Record<string, any>;
+  target?: string;
+  value?: any;
 }
 
 export interface TTSRequest {
@@ -134,29 +158,36 @@ export interface TTSRequest {
   language?: string;
   voice?: string;
   speed?: number;
+  pitch?: number;
 }
 
 export interface TTSResponse {
-  audioUrl: string;
+  audioUrl?: string;
+  audioData?: string;
   duration: number;
+  format?: 'wav' | 'mp3';
 }
 
 export interface VoiceOverRequest {
   slideId: string;
   text: string;
   voice?: string;
+  language?: string;
 }
 
 export interface VoiceOverResponse {
   audioUrl: string;
   duration: number;
+  slideId?: string;
+  audioData?: string;
 }
 
 export interface AvailableVoice {
   id: string;
   name: string;
   language: string;
-  gender?: 'male' | 'female';
+  languageCode?: string;
+  gender?: 'male' | 'female' | 'neutral';
 }
 
 export interface VoiceSettings {
@@ -164,12 +195,17 @@ export interface VoiceSettings {
   language: string;
   voice: string;
   speed: number;
+  pitch?: number;
 }
 
 export interface SlideVoiceOver {
+  id?: string;
   slideId: string;
-  audioUrl: string;
+  audioUrl?: string;
+  audioPath?: string;
   duration: number;
+  language?: string;
+  createdAt?: string;
 }
 
 // Cache types
@@ -177,6 +213,7 @@ export interface CacheEntry {
   key: string;
   value: any;
   expiresAt: number;
+  type?: string;
 }
 
 // Export types
@@ -184,6 +221,7 @@ export interface ExportConfig {
   format: 'pdf' | 'pptx' | 'html' | 'video';
   quality: 'low' | 'medium' | 'high';
   includeAnimations?: boolean;
+  options?: Record<string, any>;
 }
 
 export interface ExportJob {
@@ -193,7 +231,10 @@ export interface ExportJob {
   status: 'pending' | 'processing' | 'completed' | 'failed';
   progress: number;
   outputPath?: string;
+  filePath?: string;
   error?: string;
+  createdAt?: string;
+  completedAt?: string;
 }
 
 // Animation types
@@ -201,6 +242,7 @@ export interface AnimationTimeline {
   id: string;
   slideId: string;
   animations: Animation[];
+  duration?: number;
 }
 
 export interface AnimationPreset {
