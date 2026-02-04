@@ -5,7 +5,7 @@
 ### Download & Install in 3 Steps
 
 **1. Download the Installer**
-- Go to the [Releases](https://github.com/YOUR_USERNAME/slides-clone/releases) page
+- Go to the [Releases](https://github.com/DarkRX01/Local-Ai-slides/releases) page
 - Download `Slides-Clone-Setup-1.0.0.exe` (latest version)
 - File size: ~250 MB
 
@@ -31,7 +31,7 @@
 
 **Perfect for USB drives or when you don't have admin rights**
 
-1. Download `SlidesClone-Portable-1.0.0.exe` from [Releases](https://github.com/YOUR_USERNAME/slides-clone/releases)
+1. Download `SlidesClone-Portable-1.0.0.exe` from [Releases](https://github.com/DarkRX01/Local-Ai-slides/releases)
 2. Put it anywhere (Desktop, USB drive, folder, etc.)
 3. Double-click to run
 4. No installation needed - all data saved in the same folder
