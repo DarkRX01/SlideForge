@@ -1,6 +1,7 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 import fs from 'fs';
+import demoPresentation from '../data/demoPresentation';
 
 const DB_PATH = process.env.DB_PATH || path.join(process.cwd(), 'data', 'presentations.sqlite');
 
@@ -123,6 +124,37 @@ export function initializeDatabase() {
       INSERT INTO settings (id, password_protection, theme, language, auto_save, auto_save_interval, export_quality, ai_model, created_at, updated_at)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `).run('default', 0, 'auto', 'en', 1, 30000, 'standard', 'llama3', new Date().toISOString(), new Date().toISOString());
+  }
+
+  const demoPresentationCount = db.prepare('SELECT COUNT(*) as count FROM presentations WHERE id = ?').get('demo-presentation') as { count: number };
+  if (demoPresentationCount.count === 0) {
+    db.prepare(`
+      INSERT INTO presentations (id, title, description, theme, settings, created_at, updated_at)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(
+      demoPresentation.id,
+      demoPresentation.title,
+      'A comprehensive demo showcasing all features of Slides Clone',
+      JSON.stringify(demoPresentation.theme),
+      JSON.stringify({}),
+      demoPresentation.createdAt,
+      demoPresentation.updatedAt
+    );
+
+    for (const slide of demoPresentation.slides) {
+      db.prepare(`
+        INSERT INTO slides (id, presentation_id, order_index, elements, animations, background, notes)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `).run(
+        slide.id,
+        slide.presentationId,
+        slide.order,
+        JSON.stringify(slide.elements),
+        JSON.stringify(slide.animations),
+        JSON.stringify(slide.background),
+        ''
+      );
+    }
   }
 }
 
