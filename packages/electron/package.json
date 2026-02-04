@@ -1,9 +1,9 @@
 {
-  "name": "@slides-clone/electron",
+  "name": "@slideforge/electron",
   "version": "1.0.0",
   "main": "dist/main.js",
-  "author": "Slides Clone Team",
-  "description": "Desktop application for Slides Clone - AI-powered presentation tool",
+  "author": "SlideForge Team",
+  "description": "Desktop application for SlideForge - AI-powered presentation tool",
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch src/main.ts",
@@ -18,7 +18,7 @@
     "clean": "rimraf dist build"
   },
   "dependencies": {
-    "@slides-clone/shared": "*",
+    "@slideforge/shared": "*",
     "electron-updater": "^6.1.7",
     "electron-store": "^8.1.0"
   },
@@ -34,8 +34,8 @@
     "typescript": "^5.3.3"
   },
   "build": {
-    "appId": "com.slides-clone.app",
-    "productName": "Slides Clone",
+    "appId": "com.slideforge.app",
+    "productName": "SlideForge",
     "directories": {
       "output": "build",
       "buildResources": "resources"
@@ -64,7 +64,7 @@
     "win": {
       "target": ["nsis", "portable"],
       "icon": "resources/icon.ico",
-      "publisherName": "Slides Clone"
+      "publisherName": "SlideForge"
     },
     "mac": {
       "target": ["dmg", "zip"],
@@ -87,7 +87,7 @@
       "allowToChangeInstallationDirectory": false,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Slides Clone",
+      "shortcutName": "SlideForge",
       "runAfterFinish": true,
       "installerIcon": "resources/installer.ico",
       "uninstallerIcon": "resources/uninstaller.ico",
@@ -96,7 +96,7 @@
       "deleteAppDataOnUninstall": false
     },
     "portable": {
-      "artifactName": "SlidesClone-Portable-${version}.exe"
+      "artifactName": "SlideForge-Portable-${version}.exe"
     }
   }
 }

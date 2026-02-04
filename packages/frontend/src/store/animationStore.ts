@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Animation, AnimationTimeline, AnimationPreset, Keyframe } from '@slides-clone/shared';
+import { Animation, AnimationTimeline, AnimationPreset, Keyframe } from '@slideforge/shared';
 import { animationPresets } from '@/lib/animationPresets';
 
 interface AnimationHistory {

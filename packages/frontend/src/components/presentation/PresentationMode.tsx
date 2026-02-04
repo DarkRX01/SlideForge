@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { usePresentationStore } from '@/store/presentationStore';
 import { useVoiceStore } from '@/store/voiceStore';
-import type { Slide } from '@slides-clone/shared';
+import type { Slide } from '@slideforge/shared';
 
 export const PresentationMode: React.FC = () => {
   const { currentPresentation } = usePresentationStore();

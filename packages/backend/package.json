@@ -1,5 +1,5 @@
 {
-  "name": "@slides-clone/backend",
+  "name": "@slideforge/backend",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@slides-clone/shared": "*",
+    "@slideforge/shared": "*",
     "axios": "^1.6.5",
     "better-sqlite3": "^9.3.0",
     "canvas": "^2.11.2",

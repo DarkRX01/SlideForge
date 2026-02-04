@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { ExportService } from '../exportService';
-import type { Presentation, ExportConfig } from '@slides-clone/shared';
+import type { Presentation, ExportConfig } from '@slideforge/shared';
 
 vi.mock('jspdf', () => ({
   jsPDF: vi.fn().mockImplementation(() => ({

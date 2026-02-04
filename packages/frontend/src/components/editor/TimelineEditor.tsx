@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { Animation } from '@slides-clone/shared';
+import { Animation } from '@slideforge/shared';
 import { useAnimationStore } from '@/store/animationStore';
 import { Play, Pause, Square, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';

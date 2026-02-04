@@ -1,4 +1,4 @@
-const DB_NAME = 'slides-clone-cache';
+const DB_NAME = 'slideforge-cache';
 const DB_VERSION = 1;
 const STORE_NAME = 'assets';
 

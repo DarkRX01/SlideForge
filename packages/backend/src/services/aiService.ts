@@ -1,7 +1,7 @@
 import type { 
   SlideElement,
   TextProperties
-} from '@slides-clone/shared';
+} from '@slideforge/shared';
 import { CacheService } from './cacheService';
 import { PresentationModel } from '../models/Presentation';
 import { SlideModel } from '../models/Slide';

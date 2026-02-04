@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import { Animation, AnimationType, EasingType, Keyframe, ParticleConfig } from '@slides-clone/shared';
+import { Animation, AnimationType, EasingType, Keyframe, ParticleConfig } from '@slideforge/shared';
 import * as THREE from 'three';
 
 export class AnimationEngine {

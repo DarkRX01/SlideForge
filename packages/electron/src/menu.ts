@@ -180,13 +180,13 @@ export function setupMenu(mainWindow: BrowserWindow): void {
         {
           label: 'Documentation',
           click: async () => {
-            await shell.openExternal('https://github.com/slides-clone/docs');
+            await shell.openExternal('https://github.com/DarkRX01/SlideForge');
           },
         },
         {
           label: 'Report Issue',
           click: async () => {
-            await shell.openExternal('https://github.com/slides-clone/issues');
+            await shell.openExternal('https://github.com/DarkRX01/SlideForge/issues');
           },
         },
         { type: 'separator' },

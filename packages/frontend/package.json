@@ -1,5 +1,5 @@
 {
-  "name": "@slides-clone/frontend",
+  "name": "@slideforge/frontend",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -23,7 +23,7 @@
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slider": "^1.1.2",
     "@radix-ui/react-tooltip": "^1.0.7",
-    "@slides-clone/shared": "*",
+    "@slideforge/shared": "*",
     "@tanstack/react-virtual": "^3.13.18",
     "axios": "^1.6.5",
     "clsx": "^2.1.0",

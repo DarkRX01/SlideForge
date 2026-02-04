@@ -7,7 +7,7 @@ import type {
   VoiceCommandRequest,
   TTSRequest,
   VoiceOverRequest,
-} from '@slides-clone/shared';
+} from '@slideforge/shared';
 
 const router = express.Router();
 

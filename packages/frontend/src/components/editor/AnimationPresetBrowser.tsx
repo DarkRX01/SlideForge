@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AnimationPreset } from '@slides-clone/shared';
+import { AnimationPreset } from '@slideforge/shared';
 import { animationPresets, getAllCategories } from '@/lib/animationPresets';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';

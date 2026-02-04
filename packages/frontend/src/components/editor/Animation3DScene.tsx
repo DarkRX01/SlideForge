@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { Animation } from '@slides-clone/shared';
+import { Animation } from '@slideforge/shared';
 
 interface Animation3DSceneProps {
   animation: Animation;

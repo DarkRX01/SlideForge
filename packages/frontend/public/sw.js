@@ -1,4 +1,4 @@
-const CACHE_NAME = 'slides-clone-v1';
+const CACHE_NAME = 'slideforge-v1';
 const RUNTIME_CACHE = 'runtime-cache';
 
 const STATIC_ASSETS = [

@@ -5,15 +5,15 @@
 ### Download & Install in 3 Steps
 
 **1. Download the Installer**
-- Go to the [Releases](https://github.com/DarkRX01/Local-Ai-slides/releases) page
-- Download `Slides-Clone-Setup-1.0.0.exe` (latest version)
+- Go to the [Releases](https://github.com/DarkRX01/SlideForge/releases) page
+- Download `SlideForge-Setup-1.0.0.exe` (latest version)
 - File size: ~250 MB
 
 **2. Run the Installer**
 - Double-click the downloaded `.exe` file
 - Click **"Yes"** if Windows asks for permission
 - The installer will automatically:
-  - Install to `C:\Program Files\Slides Clone`
+  - Install to `C:\Program Files\SlideForge`
   - Create a desktop shortcut
   - Add to Start Menu
   - Launch the app when done
@@ -22,8 +22,8 @@
 - The app will open automatically
 - Find it anytime via:
   - Desktop shortcut
-  - Start Menu → "Slides Clone"
-  - Search Windows for "Slides Clone"
+  - Start Menu → "SlideForge"
+  - Search Windows for "SlideForge"
 
 ---
 
@@ -31,7 +31,7 @@
 
 **Perfect for USB drives or when you don't have admin rights**
 
-1. Download `SlidesClone-Portable-1.0.0.exe` from [Releases](https://github.com/DarkRX01/Local-Ai-slides/releases)
+1. Download `SlideForge-Portable-1.0.0.exe` from [Releases](https://github.com/DarkRX01/SlideForge/releases)
 2. Put it anywhere (Desktop, USB drive, folder, etc.)
 3. Double-click to run
 4. No installation needed - all data saved in the same folder

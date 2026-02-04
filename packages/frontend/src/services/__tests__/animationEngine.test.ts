@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { AnimationEngine } from '../animationEngine';
-import { Animation } from '@slides-clone/shared';
+import { Animation } from '@slideforge/shared';
 
 describe('AnimationEngine', () => {
   let engine: AnimationEngine;

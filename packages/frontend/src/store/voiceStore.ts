@@ -7,7 +7,7 @@ import type {
   AvailableVoice,
   VoiceSettings,
   SlideVoiceOver,
-} from '@slides-clone/shared';
+} from '@slideforge/shared';
 import { api } from '@/services/api';
 
 interface VoiceStore {

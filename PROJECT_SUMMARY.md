@@ -5,7 +5,7 @@
 A **fully-featured, local-first presentation application** that rivals Slides.com/Reveal.js with AI superpowers. Everything runs on your computer - no cloud, no tracking, 100% offline after setup.
 
 ### Repository
-**GitHub**: https://github.com/DarkRX01/Local-Ai-slides
+**GitHub**: https://github.com/DarkRX01/SlideForge
 
 ---
 

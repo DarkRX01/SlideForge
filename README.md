@@ -1,10 +1,10 @@
-# 🎨 Slides Clone - Your AI-Powered Presentation Sidekick
+# 🎨 SlideForge - Your AI-Powered Presentation Sidekick
 
-[![GitHub release](https://img.shields.io/github/v/release/DarkRX01/Local-Ai-slides?include_prereleases)](https://github.com/DarkRX01/Local-Ai-slides/releases)
-[![GitHub downloads](https://img.shields.io/github/downloads/DarkRX01/Local-Ai-slides/total)](https://github.com/DarkRX01/Local-Ai-slides/releases)
+[![GitHub release](https://img.shields.io/github/v/release/DarkRX01/SlideForge?include_prereleases)](https://github.com/DarkRX01/SlideForge/releases)
+[![GitHub downloads](https://img.shields.io/github/downloads/DarkRX01/SlideForge/total)](https://github.com/DarkRX01/SlideForge/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> **Just want to use it?** Grab the [**🪟 Windows installer**](https://github.com/DarkRX01/Local-Ai-slides/releases) and you're good to go in 3 clicks!
+> **Just want to use it?** Grab the [**🪟 Windows installer**](https://github.com/DarkRX01/SlideForge/releases) and you're good to go in 3 clicks!
 
 **What's this?** Think PowerPoint meets AI magic, but everything runs on *your* computer. No cloud BS, no subscriptions, no tracking. Just you, your ideas, and some seriously cool AI tech working together.
 
@@ -13,7 +13,7 @@
 ## 🚀 Get Started (Like, Right Now)
 
 ### For Regular Folks (Windows)
-1. [**Download the installer**](https://github.com/DarkRX01/Local-Ai-slides/releases) 
+1. [**Download the installer**](https://github.com/DarkRX01/SlideForge/releases) 
 2. Double-click it
 3. That's it. Seriously.
 
@@ -21,7 +21,7 @@ The app opens automatically and you can start making presentations immediately.
 
 👉 **Need help?** Check out the [Windows Install Guide](WINDOWS_INSTALL.md) - it's got screenshots and everything.
 
-**Latest version:** [v1.0.0](https://github.com/DarkRX01/Local-Ai-slides/releases/latest)
+**Latest version:** [v1.0.0](https://github.com/DarkRX01/SlideForge/releases/latest)
 
 ### For Developers (Let's Build!)
 Jump to the [Development section](#-for-developers) below.
@@ -71,8 +71,8 @@ Want to hack on this? Hell yeah.
 
 ```bash
 # Clone it
-git clone https://github.com/DarkRX01/Local-Ai-slides.git
-cd Local-Ai-slides
+git clone https://github.com/DarkRX01/SlideForge.git
+cd SlideForge
 
 # Install everything
 npm install
@@ -236,4 +236,4 @@ If you find this useful, throw it a star! It helps more people discover the proj
 
 **Made with ❤️ by [DarkRX01](https://github.com/DarkRX01)**
 
-[Download](https://github.com/DarkRX01/Local-Ai-slides/releases/latest) • [Report Bug](https://github.com/DarkRX01/Local-Ai-slides/issues/new) • [Request Feature](https://github.com/DarkRX01/Local-Ai-slides/issues/new)
+[Download](https://github.com/DarkRX01/SlideForge/releases/latest) • [Report Bug](https://github.com/DarkRX01/SlideForge/issues/new) • [Request Feature](https://github.com/DarkRX01/SlideForge/issues/new)

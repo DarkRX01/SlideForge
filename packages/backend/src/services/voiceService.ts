@@ -13,7 +13,7 @@ import type {
   AvailableVoice,
   VoiceCommandAction,
   SlideVoiceOver,
-} from '@slides-clone/shared';
+} from '@slideforge/shared';
 import { db } from '../utils/database';
 
 const execAsync = promisify(exec);

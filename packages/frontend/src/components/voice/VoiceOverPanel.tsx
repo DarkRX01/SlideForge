@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useVoiceStore } from '@/store/voiceStore';
 import { Button } from '@/components/ui/Button';
-import type { SlideVoiceOver } from '@slides-clone/shared';
+import type { SlideVoiceOver } from '@slideforge/shared';
 
 interface VoiceOverPanelProps {
   slideId: string;

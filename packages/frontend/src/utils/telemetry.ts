@@ -4,8 +4,8 @@ interface TelemetryEvent {
   properties?: Record<string, any>;
 }
 
-const TELEMETRY_ENABLED_KEY = 'slides-clone-telemetry-enabled';
-const TELEMETRY_DATA_KEY = 'slides-clone-telemetry-data';
+const TELEMETRY_ENABLED_KEY = 'slideforge-telemetry-enabled';
+const TELEMETRY_DATA_KEY = 'slideforge-telemetry-data';
 
 export class Telemetry {
   private static instance: Telemetry;

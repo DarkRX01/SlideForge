@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Keyframe, EasingType } from '@slides-clone/shared';
+import { Keyframe, EasingType } from '@slideforge/shared';
 import { Plus, Trash2, Copy } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';

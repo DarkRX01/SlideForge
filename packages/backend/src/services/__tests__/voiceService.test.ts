@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { voiceService } from '../voiceService';
-import type { VoiceCommandRequest, TTSRequest, VoiceOverRequest } from '@slides-clone/shared';
+import type { VoiceCommandRequest, TTSRequest, VoiceOverRequest } from '@slideforge/shared';
 
 vi.mock('../../utils/database', () => ({
   db: {

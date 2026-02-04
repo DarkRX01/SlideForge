@@ -1,7 +1,7 @@
 import path from 'path';
 import fs from 'fs/promises';
 import { v4 as uuidv4 } from 'uuid';
-import type { Presentation, ExportConfig, ExportJob } from '@slides-clone/shared';
+import type { Presentation, ExportConfig, ExportJob } from '@slideforge/shared';
 import type { Server as SocketIOServer } from 'socket.io';
 
 export class ExportService {

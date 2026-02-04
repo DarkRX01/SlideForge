@@ -1,5 +1,5 @@
 import { CacheModel } from '../models/Cache';
-import type { CacheEntry } from '@slides-clone/shared';
+import type { CacheEntry } from '@slideforge/shared';
 import crypto from 'crypto';
 
 export class CacheService {

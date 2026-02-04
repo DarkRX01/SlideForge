@@ -1,4 +1,4 @@
-import { AnimationPreset } from '@slides-clone/shared';
+import { AnimationPreset } from '@slideforge/shared';
 
 export const animationPresets: AnimationPreset[] = [
   {

@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { useAnimationStore } from '../animationStore';
-import { Animation } from '@slides-clone/shared';
+import { Animation } from '@slideforge/shared';
 
 describe('AnimationStore', () => {
   beforeEach(() => {

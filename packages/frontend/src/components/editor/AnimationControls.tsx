@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Animation } from '@slides-clone/shared';
+import { Animation } from '@slideforge/shared';
 import { useAnimationStore } from '@/store/animationStore';
 import { animationEngine } from '@/services/animationEngine';
 import { Play, Pause, Square, SkipBack, SkipForward, Settings, Repeat } from 'lucide-react';
