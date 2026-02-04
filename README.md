@@ -1,5 +1,6 @@
 # 🎨 SlideForge - Your AI-Powered Presentation Sidekick
 
+[![Build and Release](https://github.com/DarkRX01/SlideForge/actions/workflows/release.yml/badge.svg)](https://github.com/DarkRX01/SlideForge/actions/workflows/release.yml)
 [![GitHub release](https://img.shields.io/github/v/release/DarkRX01/SlideForge?include_prereleases)](https://github.com/DarkRX01/SlideForge/releases)
 [![GitHub downloads](https://img.shields.io/github/downloads/DarkRX01/SlideForge/total)](https://github.com/DarkRX01/SlideForge/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -23,6 +24,10 @@ The app opens automatically and you can start making presentations immediately.
 
 **Latest version:** [v1.0.0](https://github.com/DarkRX01/SlideForge/releases/latest)
 
+### Demo
+
+📹 **To add a 30–60s demo:** put your clip in the repo (e.g. `docs/demo.mp4` or `docs/demo.gif`), then add a line here: `[![Demo](docs/demo.gif)](docs/demo.mp4)`. Until then, use the [Ultimate Prompt](docs/ULTIMATE_PROMPT.md) in the AI assistant to see the full stack in action.
+
 ### For Developers (Let's Build!)
 Jump to the [Development section](#-for-developers) below.
 
@@ -32,7 +37,7 @@ Jump to the [Development section](#-for-developers) below.
 
 Here's what you get out of the box:
 
-- **🤖 AI That Actually Helps** - Type "make me a pitch deck about AI ethics" and watch it generate slides with real content. Uses Llama3/Mistral running locally on your machine.
+- **🤖 AI That Actually Helps** - Type "make me a pitch deck about AI ethics" and watch it generate slides with real content. Uses Llama3/Mistral running locally on your machine. Try the **[Ultimate Prompt](docs/ULTIMATE_PROMPT.md)** for a full-stack demo (slides + images + animations + exports).
 
 - **🎨 Editing That Doesn't Suck** - Drag, drop, resize, rotate. Layer management that makes sense. Undo/redo that actually works. You know, the basics done right.
 
@@ -181,10 +186,13 @@ npm run test:coverage     # See what's covered
 - [Quick Start Guide](QUICK_START.md) - Get running in 5 minutes
 - [Build Guide](BUILD_GUIDE.md) - Compile from source
 - [User Guide](USER_GUIDE.md) - Complete walkthrough of features
+- [**Ultimate Prompt**](docs/ULTIMATE_PROMPT.md) - One prompt to exercise the full stack (slides, images, animations, exports)
 - [API Docs](API.md) - REST API reference
 - [Troubleshooting](TROUBLESHOOTING.md) - When things go wrong
 - [Plugin Development](PLUGIN_DEVELOPMENT.md) - Build your own features
 - [Release Guide](RELEASE.md) - How to cut a new release
+- [Roadmap](ROADMAP.md) - What's next (Mac/Linux, demo, plugins, etc.)
+- [Repo setup](REPO_SETUP.md) - One-time: GitHub description & topics
 
 ---
 
@@ -222,9 +230,9 @@ MIT - do whatever you want with it. See [LICENSE](LICENSE) for the legal stuff.
 
 ## 💬 Get Help
 
-- **Something broken?** [Open an issue](https://github.com/DarkRX01/Local-Ai-slides/issues/new)
-- **Got questions?** [Start a discussion](https://github.com/DarkRX01/Local-Ai-slides/discussions)
-- **Want to chat?** [Check the wiki](https://github.com/DarkRX01/Local-Ai-slides/wiki)
+- **Something broken?** [Open an issue](https://github.com/DarkRX01/SlideForge/issues/new)
+- **Got questions?** [Start a discussion](https://github.com/DarkRX01/SlideForge/discussions)
+- **Want to contribute?** See [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 
 ---
 

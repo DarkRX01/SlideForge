@@ -1,4 +1,4 @@
-# Build Guide - Slides Clone
+# Build Guide - SlideForge
 
 ## Quick Build (Development)
 
@@ -39,8 +39,35 @@ npm run build:win:portable
 ```
 
 **Output:** `packages/electron/build/`
-- `Slides Clone Setup 1.0.0.exe` - Installer
-- `SlidesClone-Portable-1.0.0.exe` - Portable
+- `SlideForge Setup 1.0.0.exe` - Installer (NSIS)
+- `SlideForge-Portable-1.0.0.exe` - Portable (no install)
+
+### Build macOS (DMG + ZIP)
+
+```bash
+# On a Mac only
+npm run build:mac
+```
+
+**Output:** `packages/electron/build/`
+- `SlideForge-1.0.0.dmg` - Disk image
+- `SlideForge-1.0.0-mac.zip` - Archive (e.g. for notarization)
+
+**Note:** Apple Silicon (M1/M2) and Intel are supported. Add `icon.icns` in `packages/electron/resources/` for a proper app icon (see [resources/README.md](packages/electron/resources/README.md)). For distribution outside the Mac App Store, sign and notarize (see [ROADMAP.md](ROADMAP.md)).
+
+### Build Linux (AppImage, deb, rpm)
+
+```bash
+# On Linux
+npm run build:linux
+```
+
+**Output:** `packages/electron/build/`
+- `SlideForge-1.0.0.AppImage` - Portable
+- `slideforge_1.0.0_amd64.deb` - Debian/Ubuntu
+- `slideforge-1.0.0.x86_64.rpm` - Fedora/RHEL
+
+**Dependencies (Debian/Ubuntu):** `libgtk-3-dev`, `libnotify-dev`, `libnss3`, `libxss1`, `libasound2`, `fakeroot`, `rpm`. Add `icon.png` in `packages/electron/resources/` for the app icon (see [resources/README.md](packages/electron/resources/README.md)).
 
 ---
 
@@ -247,26 +274,23 @@ npm run build
 
 ## CI/CD Build
 
-### GitHub Actions
+### GitHub Actions (Releases)
 
-```yaml
-name: Build Windows Installer
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm run build:win
-      - uses: actions/upload-artifact@v3
-        with:
-          name: installer
-          path: packages/electron/build/*.exe
+On **tag push** (e.g. `v1.0.0`), the [release workflow](.github/workflows/release.yml) runs:
+
+1. **build-windows** – NSIS installer + portable `.exe`
+2. **build-mac** – `.dmg` + `.zip` (macos-latest)
+3. **build-linux** – AppImage, `.deb`, `.rpm` (ubuntu-latest)
+4. **release** – Downloads all artifacts and creates a GitHub Release with every file attached
+
+So to publish a release:
+
+```bash
+git tag v1.0.0
+git push origin v1.0.0
 ```
+
+Then open [Actions](https://github.com/DarkRX01/SlideForge/actions) and the [Releases](https://github.com/DarkRX01/SlideForge/releases) page. You can also trigger the workflow manually (workflow_dispatch) to build artifacts without creating a release.
 
 ---
 
@@ -314,19 +338,19 @@ npm run build:win -- --publish always
 ## Next Steps After Building
 
 1. **Test the installer**
-   - Run `Slides Clone Setup 1.0.0.exe`
+   - Run `SlideForge Setup 1.0.0.exe` (Windows) or open the DMG (Mac) or AppImage (Linux)
    - Verify installation works
    - Test all features
 
 2. **Test portable version**
-   - Run portable .exe
+   - Run portable .exe (Windows) or AppImage (Linux)
    - Verify no installation required
    - Test on fresh system
 
 3. **Create release**
    - Tag version: `git tag v1.0.0`
-   - Push to GitHub
-   - Upload installers to Releases page
+   - Push tag: `git push origin v1.0.0`
+   - GitHub Actions builds Windows + Mac + Linux and attaches all installers to the [Releases](https://github.com/DarkRX01/SlideForge/releases) page
 
 4. **Update documentation**
    - Update version numbers

@@ -54,7 +54,8 @@ packages/electron/build/
 packages/electron/release/
 packages/electron/resources/icon.ico
 packages/electron/resources/icon.icns
-packages/electron/resources/icon.png
+# Allow committed placeholder so CI has an icon (scripts/generate-placeholder-icons.js)
+!packages/electron/resources/icon.png
 
 # Database
 *.db

@@ -8,6 +8,7 @@ Complete guide for using the Presentation App to create stunning presentations.
 - [Creating Presentations](#creating-presentations)
 - [Working with Slides](#working-with-slides)
 - [AI-Powered Features](#ai-powered-features)
+- [The Ultimate Prompt](#the-ultimate-prompt)
 - [Images and Media](#images-and-media)
 - [Animations](#animations)
 - [Multi-Language Support](#multi-language-support)
@@ -194,6 +195,10 @@ Use alignment tools or keyboard shortcuts:
 
 1. Click **"AI Assistant"** in right panel
 2. Click **"Generate Presentation"**
+
+### The Ultimate Prompt
+
+Want a single prompt that pushes SlideForge to its limits—AI slide gen, Stable Diffusion images, animations, multilingual, voice, and exports? Use the **[Ultimate Prompt](docs/ULTIMATE_PROMPT.md)** to generate a full 15-slide deck on "The Future of AI in Creative Industries" with images, transitions, and export-ready output. Copy-paste it into the AI assistant and tweak as needed.
 3. Enter detailed prompt:
    ```
    Create a 10-slide presentation about sustainable energy.
