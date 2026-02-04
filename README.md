@@ -7,11 +7,13 @@ A fully local, AI-powered presentation builder that runs entirely on your machin
 ## 🚀 Quick Start
 
 ### Windows Users (Easiest)
-1. **Download** the latest `.exe` from [Releases](https://github.com/YOUR_USERNAME/slides-clone/releases)
+1. **Download** the latest `.exe` from [**Releases**](https://github.com/DarkRX01/Local-Ai-slides/releases)
 2. **Double-click** to install
 3. **Done!** App launches automatically
 
 👉 **[Full Windows Install Guide](WINDOWS_INSTALL.md)**
+
+**Latest Release:** [v1.0.0](https://github.com/DarkRX01/Local-Ai-slides/releases/latest)
 
 ### Developers
 See the [Development Setup](#development) section below.
